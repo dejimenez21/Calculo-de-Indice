@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema_de_Calculo_de_Indice
+namespace DataManager
 {
-    class Profesor : Usuarios
+    public class Profesor : Usuarios
     {
         
     }

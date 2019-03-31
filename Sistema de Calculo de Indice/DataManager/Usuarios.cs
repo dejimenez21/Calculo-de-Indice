@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema_de_Calculo_de_Indice
+namespace DataManager
 {
-    class Usuarios
+    public class Usuarios
     {
         int id;
         string nombre;

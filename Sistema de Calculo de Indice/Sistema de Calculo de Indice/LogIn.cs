@@ -16,5 +16,7 @@ namespace Sistema_de_Calculo_de_Indice
         {
             InitializeComponent();
         }
+
+
     }
 }

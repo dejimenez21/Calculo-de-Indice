@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataManager;
 
-namespace Sistema_de_Calculo_de_Indice
+namespace Processor
 {
-    class Estudiante : Usuarios
+    public class Processor
     {
-        List<Asignatura> asignaturas = new List<Asignatura>();
     }
 }
