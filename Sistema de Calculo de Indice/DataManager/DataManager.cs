@@ -7,7 +7,7 @@ using System.Configuration;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace DataManager
+namespace DataModel
 {
     public class DataManager
     {
@@ -15,17 +15,18 @@ namespace DataManager
         string pathProfesores = ConfigurationManager.AppSettings["pathProfesores"];
         string pathCarreras = ConfigurationManager.AppSettings["pathCarreras"];
 
-        List<Estudiante> Estudiantes = new List<Estudiante>();
-        List<Profesor> Profesores = new List<Profesor>();
-        List<Carrera> Carreras = new List<Carrera>();
+        public List<Estudiante> Estudiantes = new List<Estudiante>();
+        public List<Profesor> Profesores = new List<Profesor>();
+        public List<Carrera> Carreras = new List<Carrera>();
 
         #region Recuperar
-        void RecuperarEstudiantes()
+        public List<Estudiante> RecuperarEstudiantes()
         {
             string archivoEstudiantes = File.ReadAllText(pathEstudiantes);
 
             if (archivoEstudiantes.Length != 0)
                 Estudiantes = JsonConvert.DeserializeObject<List<Estudiante>>(archivoEstudiantes);
+            return Estudiantes;
         }
 
         void RecuperarProfesores()

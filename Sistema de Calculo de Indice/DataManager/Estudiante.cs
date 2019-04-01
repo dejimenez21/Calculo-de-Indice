@@ -4,12 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataManager
+namespace DataModel
 {
-    public class Estudiante : Usuarios
+    public class Estudiante : Usuario
     {
         Carrera Carrera;
         List<Asignatura> asignaturas = new List<Asignatura>();
+
+        public Estudiante(int user, string password)
+        {
+            this.Id = user;
+        }
 
         public void AgregarAsignatura(Asignatura asignatura)
         {

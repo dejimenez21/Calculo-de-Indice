@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataModel;
 
 namespace Sistema_de_Calculo_de_Indice
 {
     public partial class FormEstudiante : Form
     {
-        public FormEstudiante()
+        Estudiante estudiante;
+
+        public FormEstudiante(Estudiante estudiante)
         {
             InitializeComponent();
+            this.estudiante = estudiante;
         }
 
         private void button1_Click(object sender, EventArgs e)

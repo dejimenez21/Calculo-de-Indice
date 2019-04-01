@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema de Calculo de Indice", "Sistema de Calculo de Indice\Sistema de Calculo de Indice.csproj", "{A22978B4-C824-4AD1-BB8F-0ABD9612D22F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManager", "DataManager\DataManager.csproj", "{2818A7C8-981A-45E5-9E25-A2A39B38CE54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataManager\DataModel.csproj", "{2818A7C8-981A-45E5-9E25-A2A39B38CE54}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Processor", "Processor\Processor.csproj", "{12652396-29F4-4052-A405-BA8083432D34}"
 EndProject

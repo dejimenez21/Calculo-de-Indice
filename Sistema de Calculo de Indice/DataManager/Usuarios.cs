@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataManager
+namespace DataModel
 {
-    public class Usuarios
+    public class Usuario
     {
         int id;
         string nombre;

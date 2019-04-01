@@ -132,9 +132,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataManager\DataManager.csproj">
+    <ProjectReference Include="..\DataManager\DataModel.csproj">
       <Project>{2818a7c8-981a-45e5-9e25-a2a39b38ce54}</Project>
-      <Name>DataManager</Name>
+      <Name>DataModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Processor\Processor.csproj">
       <Project>{12652396-29f4-4052-a405-ba8083432d34}</Project>

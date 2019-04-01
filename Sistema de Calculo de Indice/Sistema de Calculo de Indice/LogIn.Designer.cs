@@ -31,11 +31,11 @@
             this.btnLogIn = new System.Windows.Forms.Button();
             this.tbUser = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkbMostrar = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -73,19 +73,19 @@
             this.tbPassword.Size = new System.Drawing.Size(255, 20);
             this.tbPassword.TabIndex = 2;
             // 
-            // comboBox1
+            // cmbTipo
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Items.AddRange(new object[] {
             "Administrador",
             "Estudiante",
             "Profesor"});
-            this.comboBox1.Location = new System.Drawing.Point(108, 100);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(255, 21);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbTipo.Location = new System.Drawing.Point(108, 100);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(255, 21);
+            this.cmbTipo.TabIndex = 3;
+            this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -120,25 +120,25 @@
             this.label3.Text = "Contraseña";
             this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
-            // checkBox1
+            // chkbMostrar
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.Black;
-            this.checkBox1.Location = new System.Drawing.Point(109, 252);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(125, 17);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Mostrar contraseña";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.chkbMostrar.AutoSize = true;
+            this.chkbMostrar.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkbMostrar.ForeColor = System.Drawing.Color.Black;
+            this.chkbMostrar.Location = new System.Drawing.Point(109, 252);
+            this.chkbMostrar.Name = "chkbMostrar";
+            this.chkbMostrar.Size = new System.Drawing.Size(125, 17);
+            this.chkbMostrar.TabIndex = 7;
+            this.chkbMostrar.Text = "Mostrar contraseña";
+            this.chkbMostrar.UseVisualStyleBackColor = true;
+            this.chkbMostrar.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Transparent;
             this.button2.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.mimizar;
-            this.button2.Location = new System.Drawing.Point(376, 29);
+            this.button2.Location = new System.Drawing.Point(381, 21);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 25);
             this.button2.TabIndex = 8;
@@ -174,13 +174,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(474, 390);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkbMostrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUser);
             this.Controls.Add(this.btnLogIn);
@@ -199,13 +199,13 @@
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.TextBox tbUser;
         private System.Windows.Forms.TextBox tbPassword;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkbMostrar;
         private System.Windows.Forms.Button button2;
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataModel;
+using Control;
 
 namespace Sistema_de_Calculo_de_Indice
 {
@@ -39,30 +41,47 @@ namespace Sistema_de_Calculo_de_Indice
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            /*
-            if (tbUser == "*el nombre del usuario o ID del admin, estudiante o profesor*")
+            bool login;
+            Processor processor = new Processor();
+            string passwword = tbPassword.Text;
+            string tipo = cmbTipo.Text;
+
+            if (tipo == "Administrador")
             {
-                if (tbPassword == "*contraseña*")
+                if (tbUser.Text == "dejimenez21" || passwword == "1234")
                 {
-                   //hacer una instancia de la ventana que se abre (si es la del usuario profesor,
-                    la de usuario estudiante o la del administrador//
-
-
-                    //se cierra esta ventana, y se queda abierta la anterior
+                    FormAdmin formAdmin = new FormAdmin();
+                    formAdmin.Show();
                     this.Hide();
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Contraseña incorrecta");
+                    MessageBox.Show("Usuario o contraseña incorrectos");
                 }
-            
-            }
-            else
-            {
-                MessageBox.Show("Usuario incorrecto");
             }
 
-      */ }
+            if (!int.TryParse(tbUser.Text, out int user))
+            {
+                MessageBox.Show("Usuario no valido");
+                return;
+            }
+            
+            if (tipo == "Estudiante")
+            {
+                Estudiante estudiante = processor.ValidarEstudiante(user, passwword, out login);
+                if (login == true)
+                {
+                    MessageBox.Show("Inicio de sesion exitoso");
+                    FormEstudiante formEstudiante = new FormEstudiante(estudiante);
+                    formEstudiante.Show();
+                    this.Hide();
+                }
+            }
+
+            
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
