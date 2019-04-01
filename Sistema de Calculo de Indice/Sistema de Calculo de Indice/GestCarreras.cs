@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Calculo_de_Indice
 {
-    public partial class MenuAdministrador : Form
+    public partial class GestCarreras : Form
     {
-        public MenuAdministrador()
+        public GestCarreras()
         {
             InitializeComponent();
         }
