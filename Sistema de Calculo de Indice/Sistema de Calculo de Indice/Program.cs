@@ -16,7 +16,7 @@ namespace Sistema_de_Calculo_de_Indice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogIn());
+            Application.Run(new ConfigUsuarios());
         }
     }
 }

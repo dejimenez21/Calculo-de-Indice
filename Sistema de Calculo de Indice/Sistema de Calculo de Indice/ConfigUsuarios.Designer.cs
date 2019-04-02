@@ -28,138 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TipoDeUsuario = new System.Windows.Forms.ComboBox();
-            this.agrUsuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.agrPassword = new System.Windows.Forms.TextBox();
+            this.tbNombresEst = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAgregUser = new System.Windows.Forms.Button();
-            this.btnElimUsuario = new System.Windows.Forms.Button();
+            this.cmbCarrera = new System.Windows.Forms.ComboBox();
+            this.tbApellidosEst = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnAgregEst = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnElimEst = new System.Windows.Forms.Button();
+            this.tbIdEst = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dtgvEstudiantes = new System.Windows.Forms.DataGridView();
+            this.tabAdministrarUsuarios = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvEstudiantes)).BeginInit();
+            this.tabAdministrarUsuarios.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(75, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo de Usuario";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(75, 121);
+            this.label2.Location = new System.Drawing.Point(149, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 14);
+            this.label2.Size = new System.Drawing.Size(47, 14);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre de usuario/ ID";
-            // 
-            // TipoDeUsuario
-            // 
-            this.TipoDeUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TipoDeUsuario.FormattingEnabled = true;
-            this.TipoDeUsuario.Items.AddRange(new object[] {
-            "Estudiante",
-            "Profesor"});
-            this.TipoDeUsuario.Location = new System.Drawing.Point(78, 68);
-            this.TipoDeUsuario.Name = "TipoDeUsuario";
-            this.TipoDeUsuario.Size = new System.Drawing.Size(289, 25);
-            this.TipoDeUsuario.TabIndex = 2;
-            this.TipoDeUsuario.SelectedIndexChanged += new System.EventHandler(this.TipoDeUsuario_SelectedIndexChanged);
-            // 
-            // agrUsuario
-            // 
-            this.agrUsuario.Location = new System.Drawing.Point(78, 138);
-            this.agrUsuario.Name = "agrUsuario";
-            this.agrUsuario.Size = new System.Drawing.Size(199, 23);
-            this.agrUsuario.TabIndex = 3;
+            this.label2.Text = "Carrera";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(75, 193);
+            this.label3.Location = new System.Drawing.Point(24, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 14);
+            this.label3.Size = new System.Drawing.Size(57, 14);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Contraseña";
+            this.label3.Text = "Nombres";
             // 
-            // agrPassword
+            // tbNombresEst
             // 
-            this.agrPassword.Location = new System.Drawing.Point(78, 210);
-            this.agrPassword.Name = "agrPassword";
-            this.agrPassword.PasswordChar = '*';
-            this.agrPassword.Size = new System.Drawing.Size(199, 23);
-            this.agrPassword.TabIndex = 3;
+            this.tbNombresEst.Location = new System.Drawing.Point(27, 68);
+            this.tbNombresEst.Name = "tbNombresEst";
+            this.tbNombresEst.Size = new System.Drawing.Size(171, 23);
+            this.tbNombresEst.TabIndex = 3;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnAgregUser);
-            this.groupBox1.Controls.Add(this.btnElimUsuario);
-            this.groupBox1.Controls.Add(this.agrPassword);
-            this.groupBox1.Controls.Add(this.agrUsuario);
-            this.groupBox1.Controls.Add(this.TipoDeUsuario);
+            this.groupBox1.Controls.Add(this.cmbCarrera);
+            this.groupBox1.Controls.Add(this.tbApellidosEst);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.btnAgregEst);
+            this.groupBox1.Controls.Add(this.tbNombresEst);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(36, 75);
+            this.groupBox1.Location = new System.Drawing.Point(489, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(723, 326);
+            this.groupBox1.Size = new System.Drawing.Size(454, 235);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Configuración de Usuarios";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.groupBox1.Text = "Agregar Estudiante";
             // 
-            // btnAgregUser
+            // cmbCarrera
             // 
-            this.btnAgregUser.BackColor = System.Drawing.Color.White;
-            this.btnAgregUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregUser.ForeColor = System.Drawing.Color.Green;
-            this.btnAgregUser.Location = new System.Drawing.Point(78, 266);
-            this.btnAgregUser.Name = "btnAgregUser";
-            this.btnAgregUser.Size = new System.Drawing.Size(120, 32);
-            this.btnAgregUser.TabIndex = 5;
-            this.btnAgregUser.Text = "Agregar usuario";
-            this.btnAgregUser.UseMnemonic = false;
-            this.btnAgregUser.UseVisualStyleBackColor = false;
-            this.btnAgregUser.Click += new System.EventHandler(this.btnAgregUser_Click);
+            this.cmbCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCarrera.FormattingEnabled = true;
+            this.cmbCarrera.Location = new System.Drawing.Point(145, 136);
+            this.cmbCarrera.Name = "cmbCarrera";
+            this.cmbCarrera.Size = new System.Drawing.Size(171, 25);
+            this.cmbCarrera.TabIndex = 8;
             // 
-            // btnElimUsuario
+            // tbApellidosEst
             // 
-            this.btnElimUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnElimUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnElimUsuario.ForeColor = System.Drawing.Color.Red;
-            this.btnElimUsuario.Location = new System.Drawing.Point(538, 266);
-            this.btnElimUsuario.Name = "btnElimUsuario";
-            this.btnElimUsuario.Size = new System.Drawing.Size(120, 32);
-            this.btnElimUsuario.TabIndex = 4;
-            this.btnElimUsuario.Text = "Eliminar usuario";
-            this.btnElimUsuario.UseVisualStyleBackColor = true;
-            this.btnElimUsuario.Click += new System.EventHandler(this.button1_Click);
+            this.tbApellidosEst.Location = new System.Drawing.Point(262, 68);
+            this.tbApellidosEst.Name = "tbApellidosEst";
+            this.tbApellidosEst.Size = new System.Drawing.Size(164, 23);
+            this.tbApellidosEst.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(259, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 14);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Apellidos";
+            // 
+            // btnAgregEst
+            // 
+            this.btnAgregEst.BackColor = System.Drawing.Color.White;
+            this.btnAgregEst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregEst.ForeColor = System.Drawing.Color.Green;
+            this.btnAgregEst.Location = new System.Drawing.Point(168, 185);
+            this.btnAgregEst.Name = "btnAgregEst";
+            this.btnAgregEst.Size = new System.Drawing.Size(120, 32);
+            this.btnAgregEst.TabIndex = 5;
+            this.btnAgregEst.Text = "Agregar";
+            this.btnAgregEst.UseMnemonic = false;
+            this.btnAgregEst.UseVisualStyleBackColor = false;
+            this.btnAgregEst.Click += new System.EventHandler(this.btnAgregEst_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 10);
+            this.panel1.Size = new System.Drawing.Size(982, 10);
             this.panel1.TabIndex = 5;
             // 
             // panel2
@@ -167,44 +176,278 @@
             this.panel2.BackColor = System.Drawing.Color.Firebrick;
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 10);
+            this.panel2.Size = new System.Drawing.Size(982, 10);
             this.panel2.TabIndex = 5;
             // 
-            // button1
+            // btnBack
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.Webp_net_resizeimage;
-            this.button1.Location = new System.Drawing.Point(24, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 29);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBack.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.Webp_net_resizeimage;
+            this.btnBack.Location = new System.Drawing.Point(24, 8);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(41, 29);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
+            // btnMinimize
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.mimizar;
-            this.button2.Location = new System.Drawing.Point(696, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 25);
-            this.button2.TabIndex = 9;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.mimizar;
+            this.btnMinimize.Location = new System.Drawing.Point(861, 13);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(28, 25);
+            this.btnMinimize.TabIndex = 9;
+            this.btnMinimize.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnSalir
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.new_resize_close;
-            this.button3.Location = new System.Drawing.Point(743, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(43, 36);
-            this.button3.TabIndex = 14;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.new_resize_close;
+            this.btnSalir.Location = new System.Drawing.Point(919, 2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(43, 36);
+            this.btnSalir.TabIndex = 14;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnElimEst);
+            this.groupBox2.Controls.Add(this.tbIdEst);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(489, 250);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(454, 101);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Eliminar Estudiante";
+            // 
+            // btnElimEst
+            // 
+            this.btnElimEst.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnElimEst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElimEst.ForeColor = System.Drawing.Color.Red;
+            this.btnElimEst.Location = new System.Drawing.Point(290, 46);
+            this.btnElimEst.Name = "btnElimEst";
+            this.btnElimEst.Size = new System.Drawing.Size(120, 32);
+            this.btnElimEst.TabIndex = 4;
+            this.btnElimEst.Text = "Eliminar";
+            this.btnElimEst.UseVisualStyleBackColor = true;
+            this.btnElimEst.Click += new System.EventHandler(this.btnElimEst_Click);
+            // 
+            // tbIdEst
+            // 
+            this.tbIdEst.Location = new System.Drawing.Point(27, 51);
+            this.tbIdEst.Name = "tbIdEst";
+            this.tbIdEst.Size = new System.Drawing.Size(199, 23);
+            this.tbIdEst.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(24, 34);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(18, 14);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "ID";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dtgvEstudiantes);
+            this.groupBox3.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(449, 348);
+            this.groupBox3.TabIndex = 17;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Estudiantes Registrados";
+            // 
+            // dtgvEstudiantes
+            // 
+            this.dtgvEstudiantes.AllowUserToOrderColumns = true;
+            this.dtgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvEstudiantes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvEstudiantes.Location = new System.Drawing.Point(3, 19);
+            this.dtgvEstudiantes.Name = "dtgvEstudiantes";
+            this.dtgvEstudiantes.Size = new System.Drawing.Size(443, 326);
+            this.dtgvEstudiantes.TabIndex = 15;
+            // 
+            // tabAdministrarUsuarios
+            // 
+            this.tabAdministrarUsuarios.Controls.Add(this.tabPage1);
+            this.tabAdministrarUsuarios.Controls.Add(this.tabPage2);
+            this.tabAdministrarUsuarios.Location = new System.Drawing.Point(0, 61);
+            this.tabAdministrarUsuarios.Name = "tabAdministrarUsuarios";
+            this.tabAdministrarUsuarios.SelectedIndex = 0;
+            this.tabAdministrarUsuarios.Size = new System.Drawing.Size(982, 392);
+            this.tabAdministrarUsuarios.TabIndex = 16;
+            this.tabAdministrarUsuarios.Tag = "";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(974, 366);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Administrar Estudiantes";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Controls.Add(this.groupBox5);
+            this.tabPage2.Controls.Add(this.groupBox6);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(974, 366);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Administrar Profesores";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox4.Location = new System.Drawing.Point(3, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(449, 348);
+            this.groupBox4.TabIndex = 20;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Profesores Registrados";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 19);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(443, 326);
+            this.dataGridView2.TabIndex = 15;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Controls.Add(this.button4);
+            this.groupBox5.Controls.Add(this.textBox4);
+            this.groupBox5.Controls.Add(this.label7);
+            this.groupBox5.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.Color.Black;
+            this.groupBox5.Location = new System.Drawing.Point(489, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(454, 235);
+            this.groupBox5.TabIndex = 18;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Agregar Profesor";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(142, 121);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
+            this.textBox3.Size = new System.Drawing.Size(161, 23);
+            this.textBox3.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(139, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 14);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Apellidos";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.Green;
+            this.button4.Location = new System.Drawing.Point(168, 185);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(120, 32);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Agregar usuario";
+            this.button4.UseMnemonic = false;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(142, 65);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.PasswordChar = '*';
+            this.textBox4.Size = new System.Drawing.Size(171, 23);
+            this.textBox4.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(139, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 14);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Nombres";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.button6);
+            this.groupBox6.Controls.Add(this.textBox6);
+            this.groupBox6.Controls.Add(this.label10);
+            this.groupBox6.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.ForeColor = System.Drawing.Color.Black;
+            this.groupBox6.Location = new System.Drawing.Point(489, 250);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(454, 101);
+            this.groupBox6.TabIndex = 19;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Eliminar Profesor";
+            // 
+            // button6
+            // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.Red;
+            this.button6.Location = new System.Drawing.Point(290, 46);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(120, 32);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Eliminar usuario";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(27, 51);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(199, 23);
+            this.textBox6.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(24, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(18, 14);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "ID";
             // 
             // ConfigUsuarios
             // 
@@ -212,37 +455,69 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(981, 451);
+            this.Controls.Add(this.tabAdministrarUsuarios);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnMinimize);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConfigUsuarios";
             this.Text = "MenuAdmin";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvEstudiantes)).EndInit();
+            this.tabAdministrarUsuarios.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox TipoDeUsuario;
-        private System.Windows.Forms.TextBox agrUsuario;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox agrPassword;
+        private System.Windows.Forms.TextBox tbNombresEst;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnElimUsuario;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnAgregUser;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAgregEst;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.TextBox tbApellidosEst;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnElimEst;
+        private System.Windows.Forms.TextBox tbIdEst;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dtgvEstudiantes;
+        private System.Windows.Forms.TabControl tabAdministrarUsuarios;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbCarrera;
     }
 }

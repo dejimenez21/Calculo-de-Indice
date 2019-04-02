@@ -9,40 +9,61 @@ using System.IO;
 
 namespace DataModel
 {
+    static class ID
+    {
+        internal static long Estudiantes;
+        internal static long Profesores;
+    }
+    
     public class DataManager
     {
         string pathEstudiantes = ConfigurationManager.AppSettings["pathEstudiantes"];
         string pathProfesores = ConfigurationManager.AppSettings["pathProfesores"];
         string pathCarreras = ConfigurationManager.AppSettings["pathCarreras"];
+        string pathIdEst = ConfigurationManager.AppSettings["pathIdEst"];
+        string pathIdProf = ConfigurationManager.AppSettings["pathIdProf"];
 
         public List<Estudiante> Estudiantes = new List<Estudiante>();
         public List<Profesor> Profesores = new List<Profesor>();
         public List<Carrera> Carreras = new List<Carrera>();
 
+        public DataManager()
+        {
+            RecuperarIds();
+        }
+
         #region Recuperar
-        public List<Estudiante> RecuperarEstudiantes()
+        public void RecuperarEstudiantes()
         {
             string archivoEstudiantes = File.ReadAllText(pathEstudiantes);
 
-            if (archivoEstudiantes.Length != 0)
+            if (archivoEstudiantes.Count() != 0)
                 Estudiantes = JsonConvert.DeserializeObject<List<Estudiante>>(archivoEstudiantes);
-            return Estudiantes;
+
         }
 
-        void RecuperarProfesores()
+        public void RecuperarProfesores()
         {
             string archivoProfesores = File.ReadAllText(pathProfesores);
 
             if (archivoProfesores.Length != 0)
                 Profesores = JsonConvert.DeserializeObject<List<Profesor>>(archivoProfesores);
+
         }
 
-        void RecuperarCarreras()
+        public List<Carrera> RecuperarCarreras()
         {
             string archivoCarreras = File.ReadAllText(pathCarreras);
 
-            if (archivoCarreras.Length != 0)
+            if (archivoCarreras.Any())
                 Carreras = JsonConvert.DeserializeObject<List<Carrera>>(archivoCarreras);
+            return Carreras;
+        }
+
+        public void RecuperarIds()
+        {
+            ID.Estudiantes = long.Parse(File.ReadAllText(pathIdEst));
+            ID.Profesores = long.Parse(File.ReadAllText(pathIdProf));
         }
         #endregion
         #region Guardar
@@ -63,18 +84,30 @@ namespace DataModel
             string strCarreras = JsonConvert.SerializeObject(Carreras);
             File.WriteAllText(pathCarreras, strCarreras);
         }
+
+        void GuardarIds()
+        {
+            File.WriteAllText(pathIdEst, ID.Estudiantes.ToString());
+            File.WriteAllText(pathIdProf, ID.Profesores.ToString());
+        }
         #endregion
         #region Agregar
-        public void AgregarEstudiante(Estudiante estudiante)
+        public long AgregarEstudiante(Estudiante estudiante)
         {
             if (!Estudiantes.Any())
             {
                 RecuperarEstudiantes();
             }
 
+            estudiante.Id = ID.Estudiantes;
+            ID.Estudiantes++;
+
             Estudiantes.Add(estudiante);
             GuardarEstudiantes();
+            GuardarIds();
+            return estudiante.Id;
         }
+
 
         public void AgregarProfesor(Profesor profesor)
         {
@@ -99,6 +132,19 @@ namespace DataModel
         }
         #endregion
 
+        #region Eliminar
+        public bool EliminarEstudiante(long id)
+        {
+            if (!Estudiantes.Any())
+            {
+                RecuperarEstudiantes();
+            }
 
+            if(Estudiantes.RemoveAll(x => x.Id == id)==0)
+                return false;
+            GuardarEstudiantes();
+            return true;
+        }
+        #endregion
     }
 }

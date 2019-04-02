@@ -9,17 +9,14 @@ namespace Control
 {
     public class Processor
     {
-        List<Estudiante> estudiantes = new List<Estudiante>();
-        List<Profesor> Profesores = new List<Profesor>();
-        List<Carrera> Carreras = new List<Carrera>();
-
+       
         public Estudiante ValidarEstudiante(int user, string password, out bool login)
         {
             Estudiante estudiante = new Estudiante(user, password);
             DataManager datamanager = new DataManager();
-            estudiantes = datamanager.RecuperarEstudiantes();
+            datamanager.RecuperarEstudiantes();
 
-            foreach (var est in estudiantes.Where(x=>x.Id==user&&x.Constraseña==password))
+            foreach (var est in datamanager.Estudiantes.Where(x=>x.Id==user&&x.Contraseña==password))
             {
                 login = true;
                 return est;
@@ -28,5 +25,6 @@ namespace Control
             login = false;
             return estudiante;
         }
+
     }
 }

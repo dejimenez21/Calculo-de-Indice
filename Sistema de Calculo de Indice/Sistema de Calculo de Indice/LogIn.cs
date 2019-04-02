@@ -14,6 +14,7 @@ namespace Sistema_de_Calculo_de_Indice
 {
     public partial class LogIn : Form
     {
+        
         public LogIn()
         {
             InitializeComponent();

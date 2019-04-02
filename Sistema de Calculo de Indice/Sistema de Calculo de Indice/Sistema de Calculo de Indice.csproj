@@ -102,6 +102,9 @@
     <EmbeddedResource Include="GestAsignaturas.resx">
       <DependentUpon>GestAsignaturas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestCarreras.resx">
+      <DependentUpon>GestCarreras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>

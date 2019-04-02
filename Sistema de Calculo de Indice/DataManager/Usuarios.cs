@@ -8,14 +8,15 @@ namespace DataModel
 {
     public class Usuario
     {
-        int id;
+        long id;
         string nombre;
         string apellido;
-        string constraseña;
+        string contraseña;
+        protected bool Activo;
 
-        public int Id { get => id; set => id = value; }
+        public long Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
-        public string Constraseña { get => constraseña; set => constraseña = value; }
+        public string Contraseña { get => contraseña; set => contraseña = value; }
     }
 }
