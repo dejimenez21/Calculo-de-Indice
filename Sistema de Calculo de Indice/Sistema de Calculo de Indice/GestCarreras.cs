@@ -62,7 +62,7 @@ namespace Sistema_de_Calculo_de_Indice
             else
                 return;
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

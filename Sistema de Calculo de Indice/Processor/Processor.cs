@@ -9,7 +9,7 @@ namespace Control
 {
     public class Processor
     {
-       
+       //
         public Estudiante ValidarEstudiante(int user, string password, out bool login)
         {
             Estudiante estudiante = new Estudiante(user, password);
