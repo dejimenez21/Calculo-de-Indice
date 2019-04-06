@@ -29,6 +29,7 @@ namespace DataModel
 
         public DataManager()
         {
+            Profesores = new List<Profesor>();
             RecuperarIds();
         }
 
@@ -46,7 +47,7 @@ namespace DataModel
         {
             string archivoProfesores = File.ReadAllText(pathProfesores);
 
-            if (archivoProfesores.Length != 0)
+            if (archivoProfesores.Count() != 0)
                 Profesores = JsonConvert.DeserializeObject<List<Profesor>>(archivoProfesores);
 
         }
@@ -109,15 +110,20 @@ namespace DataModel
         }
 
 
-        public void AgregarProfesor(Profesor profesor)
+        public long AgregarProfesor(Profesor profesor)
         {
             if (!Profesores.Any())
             {
                 RecuperarProfesores();
             }
 
+            profesor.Id = ID.Profesores;
+            ID.Profesores--;
+
             Profesores.Add(profesor);
             GuardarProfesores();
+            GuardarIds();
+            return profesor.Id;
         }
 
         public void AgregarCarreras(Carrera carrera)
@@ -131,19 +137,72 @@ namespace DataModel
             GuardarCarreras();
         }
         #endregion
-
         #region Eliminar
-        public bool EliminarEstudiante(long id)
+        public void EliminarEstudiante(long id)
         {
             if (!Estudiantes.Any())
             {
                 RecuperarEstudiantes();
             }
 
-            if(Estudiantes.RemoveAll(x => x.Id == id)==0)
-                return false;
+            Estudiantes.RemoveAll(x => x.Id == id);
             GuardarEstudiantes();
-            return true;
+        }
+
+        public void EliminarProfesor(long id)
+        {
+            if (!Profesores.Any())
+            {
+                RecuperarProfesores();
+            }
+
+            Profesores.RemoveAll(x => x.Id == id);
+            GuardarProfesores();
+        }
+
+        public void EliminarCarrera(string codigo)
+        {
+            if (!Carreras.Any())
+            {
+                RecuperarCarreras();
+            }
+
+            Carreras.RemoveAll(x => x.Codigo == codigo);
+            GuardarCarreras();
+        }
+        #endregion
+        #region Verificar
+        public bool VerificarCarrera(string codigo)
+        {
+            bool exist = false;
+            foreach(var carrera in Carreras.Where(x => x.Codigo == codigo))
+            {
+                exist = true;
+            }
+
+            return exist;
+        }
+
+        public bool VerificarProfesor(long id)
+        {
+            bool exist = false;
+            foreach (var profesor in Profesores.Where(x => x.Id == id))
+            {
+                exist = true;
+            }
+
+            return exist;
+        }
+
+        public bool VerificarEstudiante(long id)
+        {
+            bool exist = false;
+            foreach (var estudiante in Estudiantes.Where(x => x.Id == id))
+            {
+                exist = true;
+            }
+
+            return exist;
         }
         #endregion
     }

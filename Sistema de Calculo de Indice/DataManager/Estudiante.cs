@@ -9,6 +9,7 @@ namespace DataModel
     public class Estudiante : Usuario
     {
         Carrera Carrera;
+        public Carrera carrera { get => Carrera; set => Carrera = value; }
         List<Asignatura> asignaturas = new List<Asignatura>();
 
         public Estudiante() { }
@@ -21,7 +22,7 @@ namespace DataModel
             this.Nombre = nombres;
             this.Apellido = apellidos;
             this.Carrera = carrera;
-            this.Contraseña = Id.ToString();
+            
         }
 
         public void AgregarAsignatura(Asignatura asignatura)

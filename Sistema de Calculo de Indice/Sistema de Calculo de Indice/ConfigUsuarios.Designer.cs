@@ -51,16 +51,16 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtgvProfesores = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbProfApellidos = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnAgregProf = new System.Windows.Forms.Button();
+            this.tbProfNombres = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbElimProf = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,7 +70,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvProfesores)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
@@ -202,6 +202,7 @@
             this.btnMinimize.Size = new System.Drawing.Size(28, 25);
             this.btnMinimize.TabIndex = 9;
             this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnSalir
             // 
@@ -214,6 +215,7 @@
             this.btnSalir.Size = new System.Drawing.Size(43, 36);
             this.btnSalir.TabIndex = 14;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox2
             // 
@@ -320,7 +322,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Controls.Add(this.dtgvProfesores);
             this.groupBox4.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
@@ -329,21 +331,21 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Profesores Registrados";
             // 
-            // dataGridView2
+            // dtgvProfesores
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 19);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(443, 326);
-            this.dataGridView2.TabIndex = 15;
+            this.dtgvProfesores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvProfesores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvProfesores.Location = new System.Drawing.Point(3, 19);
+            this.dtgvProfesores.Name = "dtgvProfesores";
+            this.dtgvProfesores.Size = new System.Drawing.Size(443, 326);
+            this.dtgvProfesores.TabIndex = 15;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Controls.Add(this.tbProfApellidos);
             this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.button4);
-            this.groupBox5.Controls.Add(this.textBox4);
+            this.groupBox5.Controls.Add(this.btnAgregProf);
+            this.groupBox5.Controls.Add(this.tbProfNombres);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.Black;
@@ -354,13 +356,12 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Agregar Profesor";
             // 
-            // textBox3
+            // tbProfApellidos
             // 
-            this.textBox3.Location = new System.Drawing.Point(142, 121);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(161, 23);
-            this.textBox3.TabIndex = 7;
+            this.tbProfApellidos.Location = new System.Drawing.Point(142, 121);
+            this.tbProfApellidos.Name = "tbProfApellidos";
+            this.tbProfApellidos.Size = new System.Drawing.Size(161, 23);
+            this.tbProfApellidos.TabIndex = 7;
             // 
             // label5
             // 
@@ -373,26 +374,26 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Apellidos";
             // 
-            // button4
+            // btnAgregProf
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Green;
-            this.button4.Location = new System.Drawing.Point(168, 185);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 32);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Agregar usuario";
-            this.button4.UseMnemonic = false;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnAgregProf.BackColor = System.Drawing.Color.White;
+            this.btnAgregProf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregProf.ForeColor = System.Drawing.Color.Green;
+            this.btnAgregProf.Location = new System.Drawing.Point(168, 185);
+            this.btnAgregProf.Name = "btnAgregProf";
+            this.btnAgregProf.Size = new System.Drawing.Size(120, 32);
+            this.btnAgregProf.TabIndex = 5;
+            this.btnAgregProf.Text = "Agregar Profesor";
+            this.btnAgregProf.UseMnemonic = false;
+            this.btnAgregProf.UseVisualStyleBackColor = false;
+            this.btnAgregProf.Click += new System.EventHandler(this.btnAgregProf_Click);
             // 
-            // textBox4
+            // tbProfNombres
             // 
-            this.textBox4.Location = new System.Drawing.Point(142, 65);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(171, 23);
-            this.textBox4.TabIndex = 3;
+            this.tbProfNombres.Location = new System.Drawing.Point(142, 65);
+            this.tbProfNombres.Name = "tbProfNombres";
+            this.tbProfNombres.Size = new System.Drawing.Size(171, 23);
+            this.tbProfNombres.TabIndex = 3;
             // 
             // label7
             // 
@@ -408,7 +409,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.button6);
-            this.groupBox6.Controls.Add(this.textBox6);
+            this.groupBox6.Controls.Add(this.tbElimProf);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.Black;
@@ -428,15 +429,16 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(120, 32);
             this.button6.TabIndex = 4;
-            this.button6.Text = "Eliminar usuario";
+            this.button6.Text = "Eliminar Profesor";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // textBox6
+            // tbElimProf
             // 
-            this.textBox6.Location = new System.Drawing.Point(27, 51);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(199, 23);
-            this.textBox6.TabIndex = 3;
+            this.tbElimProf.Location = new System.Drawing.Point(27, 51);
+            this.tbElimProf.Name = "tbElimProf";
+            this.tbElimProf.Size = new System.Drawing.Size(199, 23);
+            this.tbElimProf.TabIndex = 3;
             // 
             // label10
             // 
@@ -475,7 +477,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvProfesores)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -507,16 +509,16 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dtgvProfesores;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbProfApellidos;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnAgregProf;
+        private System.Windows.Forms.TextBox tbProfNombres;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbElimProf;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbCarrera;
     }

@@ -8,6 +8,12 @@ namespace DataModel
 {
     public class Profesor : Usuario
     {
-        //A
+        public Profesor() { }
+
+        public Profesor(string nombres, string apellidos)
+        {
+            this.Nombre = nombres;
+            this.Apellido = apellidos;
+        }
     }
 }

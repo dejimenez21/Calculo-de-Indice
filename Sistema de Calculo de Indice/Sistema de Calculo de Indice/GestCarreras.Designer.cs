@@ -40,14 +40,14 @@
             this.tbCodigo = new System.Windows.Forms.TextBox();
             this.lbcod = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvCarreras = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnElimCarrera = new System.Windows.Forms.Button();
             this.tbElimCodigo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCarreras)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +81,7 @@
             this.button1.Size = new System.Drawing.Size(43, 36);
             this.button1.TabIndex = 23;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -93,6 +94,7 @@
             this.button2.Size = new System.Drawing.Size(28, 25);
             this.button2.TabIndex = 22;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnAtras
             // 
@@ -106,6 +108,7 @@
             this.btnAtras.Size = new System.Drawing.Size(41, 29);
             this.btnAtras.TabIndex = 19;
             this.btnAtras.UseVisualStyleBackColor = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // groupBox2
             // 
@@ -175,23 +178,23 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.dtgvCarreras);
             this.groupBox3.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox3.Location = new System.Drawing.Point(12, 82);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(237, 348);
+            this.groupBox3.Size = new System.Drawing.Size(265, 348);
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Carreras Registradas";
             // 
-            // dataGridView1
+            // dtgvCarreras
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(231, 326);
-            this.dataGridView1.TabIndex = 15;
+            this.dtgvCarreras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCarreras.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvCarreras.Location = new System.Drawing.Point(3, 19);
+            this.dtgvCarreras.Name = "dtgvCarreras";
+            this.dtgvCarreras.Size = new System.Drawing.Size(259, 326);
+            this.dtgvCarreras.TabIndex = 15;
             // 
             // groupBox1
             // 
@@ -218,6 +221,7 @@
             this.btnElimCarrera.TabIndex = 4;
             this.btnElimCarrera.Text = "Eliminar";
             this.btnElimCarrera.UseVisualStyleBackColor = true;
+            this.btnElimCarrera.Click += new System.EventHandler(this.btnElimCarrera_Click);
             // 
             // tbElimCodigo
             // 
@@ -256,7 +260,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCarreras)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -277,7 +281,7 @@
         private System.Windows.Forms.TextBox tbCodigo;
         private System.Windows.Forms.Label lbcod;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvCarreras;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnElimCarrera;
         private System.Windows.Forms.TextBox tbElimCodigo;

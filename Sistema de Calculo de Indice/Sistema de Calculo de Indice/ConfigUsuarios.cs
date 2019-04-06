@@ -15,14 +15,87 @@ namespace Sistema_de_Calculo_de_Indice
     public partial class ConfigUsuarios : Form
     {
         DataManager datamanager = new DataManager();
+        
+        
+
         public ConfigUsuarios()
         {
             InitializeComponent();
 
+            IniciarDataTable();
             LlenarComboBox();
-            LlenarDataGridView();
             
+
         }
+
+        void FormRefresh()
+        {
+            IniciarDataTable();
+            tbNombresEst.Clear();
+            tbApellidosEst.Clear();
+            tbIdEst.Clear();
+            cmbCarrera.Text = " ";
+
+            tbProfApellidos.Clear();
+            tbProfNombres.Clear();
+            tbElimProf.Clear();
+        }
+
+        void IniciarDataTable()
+        {
+            DataTable Data = new DataTable();
+            DataColumn column;
+            datamanager.RecuperarEstudiantes();
+            datamanager.RecuperarProfesores();
+
+            column = new DataColumn();
+            column.DataType = typeof(long);
+            column.ColumnName = "ID";
+            column.Caption = "ID";
+            column.ReadOnly = true;
+            column.Unique = true;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Estudiante";
+            column.Caption = "Estudiante";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Carrera";
+            column.Caption = "Carrera";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            
+            Data.Columns.Add(column);
+
+            foreach (var est in datamanager.Estudiantes)
+            {
+                DataRow row;
+                row = Data.NewRow();
+                row["ID"] = est.Id;
+                row["Estudiante"] = est.Nombre + " " + est.Apellido;
+                row["Carrera"] = est.carrera.Codigo + "-" + est.carrera.Descripcion;
+                Data.Rows.Add(row);
+            }
+
+            dtgvEstudiantes.DataSource = Data;
+            dtgvEstudiantes.Columns["Carrera"].Width = 200;
+
+            dtgvProfesores.AutoGenerateColumns = true;
+            dtgvProfesores.DataSource = datamanager.Profesores;
+            dtgvProfesores.AutoGenerateColumns = false;
+            dtgvProfesores.Columns.Remove("Contraseña");
+        }
+
+        
 
         void LlenarComboBox()
         {
@@ -34,15 +107,6 @@ namespace Sistema_de_Calculo_de_Indice
             }
         }
 
-        void LlenarDataGridView()
-        {
-            datamanager.RecuperarEstudiantes();
-            dtgvEstudiantes.AutoGenerateColumns = true;
-            dtgvEstudiantes.DataSource = datamanager.Estudiantes;
-            dtgvEstudiantes.AutoGenerateColumns = false;
-            dtgvEstudiantes.Columns.Remove("Contraseña");
-
-        }
        
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -78,10 +142,8 @@ namespace Sistema_de_Calculo_de_Indice
                 return;
             }
             MessageBox.Show($"Estudiante agregado exitosamente.\nID: {id}\nConstraseña(provisional): {id}");
-            LlenarDataGridView();
-            tbNombresEst.Clear();
-            tbApellidosEst.Clear();
-            cmbCarrera.Text = " ";
+            FormRefresh();
+            
 
         }
 
@@ -96,6 +158,13 @@ namespace Sistema_de_Calculo_de_Indice
             if (!long.TryParse(tbIdEst.Text, out long id))
             {
                 MessageBox.Show("El id ingresado no es valido");
+                FormRefresh();
+                return;
+            }
+
+            if (!datamanager.VerificarEstudiante(id))
+            {
+                MessageBox.Show("El ID ingresado no esta registrado");
             }
             else
             {
@@ -103,27 +172,91 @@ namespace Sistema_de_Calculo_de_Indice
                 {
                     try
                     {
-                        ok = datamanager.EliminarEstudiante(id);
+                        datamanager.EliminarEstudiante(id);
                     }
                     catch
                     {
                         MessageBox.Show("Se produjo un error al eliminar el estudiante");
-                        tbIdEst.Clear();
+                        FormRefresh();
                         return;
                     }
-                    if (ok)
+                    MessageBox.Show("Estudiante eliminado exitosamente");
+                }
+            }
+            FormRefresh();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
+            else
+                return;
+
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState=FormWindowState.Minimized;
+        }
+
+        private void btnAgregProf_Click(object sender, EventArgs e)
+        {
+            long id;
+            string nombres = tbProfNombres.Text;
+            string apellidos = tbProfApellidos.Text;
+
+            Profesor profesor = new Profesor(nombres, apellidos);
+            id = datamanager.AgregarProfesor(profesor);
+            //try
+            //{
+            //    id = datamanager.AgregarProfesor(profesor);
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Se produjo un error al agregar el profesor");
+            //    return;
+            //}
+            MessageBox.Show($"Profesor agregado exitosamente.\nID: {id}\nConstraseña(provisional): {id}");
+            FormRefresh();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            long id;
+            if(!long.TryParse(tbElimProf.Text, out id))
+            {
+                MessageBox.Show("El id ingresado no es valido");
+                FormRefresh();
+                return;
+            }
+
+            if (!datamanager.VerificarProfesor(id))
+            {
+                MessageBox.Show("La carrera ingresada no esta registrada");
+            }
+            else
+            {
+                if (MessageBox.Show("¿Seguro que desea eliminar este Profesor?", "Eliminar Profesor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
                     {
-                        MessageBox.Show("Estudiante eliminado exitosamente");
-                        LlenarDataGridView();
-                    }  
-                    else
-                    {
-                        MessageBox.Show("El ID ingresado no esta registrado");
+                        datamanager.EliminarProfesor(id);
                     }
+                    catch
+                    {
+                        MessageBox.Show("Se produjo un error al eliminar el profesor");
+                        FormRefresh();
+                        return;
+                    }
+
+                    MessageBox.Show("Profesor eliminado exitosamente");
+
 
                 }
             }
-            tbIdEst.Clear();
+
+            FormRefresh();
         }
     }
 }

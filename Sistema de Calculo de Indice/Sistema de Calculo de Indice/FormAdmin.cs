@@ -29,7 +29,9 @@ namespace Sistema_de_Calculo_de_Indice
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            ConfigUsuarios formEstudiante = new ConfigUsuarios();
+            formEstudiante.Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -41,6 +43,13 @@ namespace Sistema_de_Calculo_de_Indice
         {
             LogIn Log = new LogIn();
             Log.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            GestCarreras gestCarreras = new GestCarreras();
+            gestCarreras.Show();
             this.Hide();
         }
     }

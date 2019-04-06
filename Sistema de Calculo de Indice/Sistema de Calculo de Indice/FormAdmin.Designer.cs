@@ -34,12 +34,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,47 +112,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones de Administrador";
             // 
-            // label1
+            // button5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(274, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 14);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "--- Agrega o elimina usuarios del sistema ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(274, 151);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 14);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "--- Organiza las asignaturas del sistema";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(274, 226);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 28);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "--- Gestiona la organización y disponibilidad\r\n    de las carreras del sistema";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(71, 75);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(177, 31);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Configuración de Usuarios";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(71, 218);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(177, 31);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Gestión de Carreras";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -165,15 +134,47 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // button3
             // 
-            this.button5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(71, 218);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(177, 31);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Gestión de Carreras";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(71, 75);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(177, 31);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Configuración de Usuarios";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(274, 226);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(243, 28);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "--- Gestiona la organización y disponibilidad\r\n    de las carreras del sistema";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(274, 151);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(220, 14);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "--- Organiza las asignaturas del sistema";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(274, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(229, 14);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "--- Agrega o elimina usuarios del sistema ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // FormAdmin
             // 

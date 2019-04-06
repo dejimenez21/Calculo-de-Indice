@@ -70,6 +70,7 @@
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbPassword.Location = new System.Drawing.Point(108, 220);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(255, 20);
             this.tbPassword.TabIndex = 2;
             // 
