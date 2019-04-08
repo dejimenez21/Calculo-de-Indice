@@ -92,7 +92,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(24, 51);
+            this.label3.Location = new System.Drawing.Point(24, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 14);
             this.label3.TabIndex = 1;
@@ -100,7 +100,7 @@
             // 
             // tbNombresEst
             // 
-            this.tbNombresEst.Location = new System.Drawing.Point(27, 68);
+            this.tbNombresEst.Location = new System.Drawing.Point(27, 63);
             this.tbNombresEst.Name = "tbNombresEst";
             this.tbNombresEst.Size = new System.Drawing.Size(171, 23);
             this.tbNombresEst.TabIndex = 3;
@@ -230,7 +230,7 @@
             this.groupBox2.Size = new System.Drawing.Size(454, 101);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Eliminar Estudiante";
+            this.groupBox2.Text = "Deshabilitar Estudiante";
             // 
             // btnElimEst
             // 
@@ -241,7 +241,7 @@
             this.btnElimEst.Name = "btnElimEst";
             this.btnElimEst.Size = new System.Drawing.Size(120, 32);
             this.btnElimEst.TabIndex = 4;
-            this.btnElimEst.Text = "Eliminar";
+            this.btnElimEst.Text = "Deshabilitar";
             this.btnElimEst.UseVisualStyleBackColor = true;
             this.btnElimEst.Click += new System.EventHandler(this.btnElimEst_Click);
             // 

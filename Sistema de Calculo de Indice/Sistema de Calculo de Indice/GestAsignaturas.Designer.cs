@@ -54,6 +54,7 @@
             this.btnAsignar = new System.Windows.Forms.Button();
             this.tbAsigClave = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnDisable = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAsignaturas)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -229,6 +230,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnDisable);
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Controls.Add(this.tbElimClave);
             this.groupBox3.Controls.Add(this.label6);
@@ -239,14 +241,14 @@
             this.groupBox3.Size = new System.Drawing.Size(446, 101);
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Eliminar Asignatura";
+            this.groupBox3.Text = "Eliminar o Deshabilitar Asignatura";
             // 
             // btnEliminar
             // 
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.Red;
-            this.btnEliminar.Location = new System.Drawing.Point(302, 46);
+            this.btnEliminar.Location = new System.Drawing.Point(282, 60);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(120, 32);
             this.btnEliminar.TabIndex = 4;
@@ -258,7 +260,7 @@
             // 
             this.tbElimClave.Location = new System.Drawing.Point(27, 51);
             this.tbElimClave.Name = "tbElimClave";
-            this.tbElimClave.Size = new System.Drawing.Size(199, 23);
+            this.tbElimClave.Size = new System.Drawing.Size(188, 23);
             this.tbElimClave.TabIndex = 3;
             // 
             // label6
@@ -350,6 +352,18 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Clave de Asignatura";
             // 
+            // btnDisable
+            // 
+            this.btnDisable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDisable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisable.ForeColor = System.Drawing.Color.Black;
+            this.btnDisable.Location = new System.Drawing.Point(282, 22);
+            this.btnDisable.Name = "btnDisable";
+            this.btnDisable.Size = new System.Drawing.Size(120, 32);
+            this.btnDisable.TabIndex = 5;
+            this.btnDisable.Text = "Deshabilitar";
+            this.btnDisable.UseVisualStyleBackColor = true;
+            // 
             // GestAsignaturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -412,5 +426,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbCreditos;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnDisable;
     }
 }
