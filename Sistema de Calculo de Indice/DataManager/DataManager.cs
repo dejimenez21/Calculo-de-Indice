@@ -258,6 +258,16 @@ namespace DataModel
             GuardarEstudiantes();
         }
 
+        public void ActualizarCalificacion(Asignatura asig, long id)
+        {
+            foreach(Estudiante est in Estudiantes.Where(x => x.Id == id))
+            {
+                est.Asignaturas.Where(x => x.Clave == asig.Clave).ToList()[0].Calificacion = asig.Calificacion;
+                est.Asignaturas.Where(x => x.Clave == asig.Clave).ToList()[0].calificada = true;
+            }
+            GuardarEstudiantes();
+        }
+
         public void AsignarProfesor(string clave, long prof)
         {
             RecuperarEstudiantes();

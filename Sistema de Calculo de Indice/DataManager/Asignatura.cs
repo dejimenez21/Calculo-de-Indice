@@ -12,6 +12,7 @@ namespace DataModel
         string descripcion;
         Profesor profesor = new Profesor();
         uint creditos;
+        public bool calificada=false;
         uint calificacion;
         AlfaCalificacion alfacalificacion=AlfaCalificacion.N;
 

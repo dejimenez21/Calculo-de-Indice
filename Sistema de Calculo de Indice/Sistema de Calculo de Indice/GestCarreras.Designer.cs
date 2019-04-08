@@ -271,6 +271,7 @@
             this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GestCarreras";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestUsuarios";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
