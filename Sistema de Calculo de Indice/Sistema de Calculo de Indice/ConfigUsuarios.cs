@@ -28,6 +28,7 @@ namespace Sistema_de_Calculo_de_Indice
 
         }
 
+        //Actualiza el form
         void FormRefresh()
         {
             IniciarDataTable();
@@ -41,6 +42,7 @@ namespace Sistema_de_Calculo_de_Indice
             tbElimProf.Clear();
         }
 
+        //Carga los datos en el GridView
         void IniciarDataTable()
         {
             DataTable Data = new DataTable();
@@ -89,6 +91,7 @@ namespace Sistema_de_Calculo_de_Indice
             dtgvEstudiantes.DataSource = Data;
             dtgvEstudiantes.Columns["Carrera"].Width = 200;
 
+            //DataGridView de profesores
             dtgvProfesores.AutoGenerateColumns = true;
             dtgvProfesores.DataSource = datamanager.Profesores;
             dtgvProfesores.AutoGenerateColumns = false;
@@ -96,7 +99,7 @@ namespace Sistema_de_Calculo_de_Indice
         }
 
         
-
+        //Carga las carreras disponibles en el ComboBox
         void LlenarComboBox()
         {
             foreach (var item in datamanager.RecuperarCarreras())
@@ -108,14 +111,15 @@ namespace Sistema_de_Calculo_de_Indice
         }
 
        
-
-        private void button1_Click_1(object sender, EventArgs e)
+        //Atras
+        private void btnBack_Click_1(object sender, EventArgs e)
         {
             FormAdmin Admin = new FormAdmin();
             Admin.Show();
             this.Hide();
         }
 
+        //Agrega un estudiante
         private void btnAgregEst_Click(object sender, EventArgs e)
         {
             string nombres = tbNombresEst.Text;
@@ -147,11 +151,7 @@ namespace Sistema_de_Calculo_de_Indice
 
         }
 
-        private void TipoDeUsuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Los tipos de usuario
-        }
-
+        //Elimina un estudiante
         private void btnElimEst_Click(object sender, EventArgs e)
         {
             bool ok;
@@ -186,20 +186,23 @@ namespace Sistema_de_Calculo_de_Indice
             FormRefresh();
         }
 
+        //Cierra la aplicacion
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro que desea salir? Su sesion sera cerrada", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 Application.Exit();
             else
                 return;
 
         }
 
+        //Minimiza la aplicacion
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState=FormWindowState.Minimized;
         }
 
+        //Agrega un profesor
         private void btnAgregProf_Click(object sender, EventArgs e)
         {
             long id;
@@ -221,7 +224,8 @@ namespace Sistema_de_Calculo_de_Indice
             FormRefresh();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        //Elimina un profesor
+        private void btnElimProf_Click(object sender, EventArgs e)
         {
             long id;
             if(!long.TryParse(tbElimProf.Text, out id))

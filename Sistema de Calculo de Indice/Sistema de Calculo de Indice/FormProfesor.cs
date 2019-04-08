@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataModel;
 
 namespace Sistema_de_Calculo_de_Indice
 {
     public partial class FormProfesor : Form
     {
-        public FormProfesor()
+        Profesor profesor = new Profesor();
+
+        public FormProfesor(Profesor profesor)
         {
             InitializeComponent();
+            this.profesor = profesor;
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -13,10 +13,13 @@ namespace DataModel
         string apellido;
         string contraseña;
         protected bool Activo;
+        protected bool Valido;
 
         public long Id { get => id;  set { id = value; contraseña = id.ToString(); } }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
-        public string Contraseña { get => contraseña; private set => contraseña = value; }
+        public string Contraseña { get => contraseña; internal set => contraseña = value; }
+
+        
     }
 }

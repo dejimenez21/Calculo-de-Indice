@@ -15,5 +15,11 @@ namespace DataModel
             this.Nombre = nombres;
             this.Apellido = apellidos;
         }
+
+        public Profesor(long user, string password)
+        {
+            this.Id = user;
+            this.Contraseña = password;
+        }
     }
 }

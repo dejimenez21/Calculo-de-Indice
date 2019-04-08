@@ -59,9 +59,10 @@
             this.tbProfNombres = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnElimProf = new System.Windows.Forms.Button();
             this.tbElimProf = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -190,7 +191,7 @@
             this.btnBack.Size = new System.Drawing.Size(41, 29);
             this.btnBack.TabIndex = 6;
             this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
             // btnMinimize
             // 
@@ -408,7 +409,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button6);
+            this.groupBox6.Controls.Add(this.btnElimProf);
             this.groupBox6.Controls.Add(this.tbElimProf);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -420,18 +421,18 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Eliminar Profesor";
             // 
-            // button6
+            // btnElimProf
             // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.Red;
-            this.button6.Location = new System.Drawing.Point(290, 46);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 32);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Eliminar Profesor";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnElimProf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnElimProf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElimProf.ForeColor = System.Drawing.Color.Red;
+            this.btnElimProf.Location = new System.Drawing.Point(290, 46);
+            this.btnElimProf.Name = "btnElimProf";
+            this.btnElimProf.Size = new System.Drawing.Size(120, 32);
+            this.btnElimProf.TabIndex = 4;
+            this.btnElimProf.Text = "Eliminar Profesor";
+            this.btnElimProf.UseVisualStyleBackColor = true;
+            this.btnElimProf.Click += new System.EventHandler(this.btnElimProf_Click);
             // 
             // tbElimProf
             // 
@@ -451,6 +452,17 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "ID";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 16F);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(384, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 27);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Gestion de Usuarios";
+            // 
             // ConfigUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,6 +470,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(981, 451);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tabAdministrarUsuarios);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnMinimize);
@@ -483,6 +496,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -517,9 +531,10 @@
         private System.Windows.Forms.TextBox tbProfNombres;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnElimProf;
         private System.Windows.Forms.TextBox tbElimProf;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbCarrera;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -17,34 +17,52 @@ namespace Sistema_de_Calculo_de_Indice
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("¿Seguro que desea salir? Su sesion sera cerrada", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
+            else
+                return;
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        //Cierra sesion
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea cerrar sesion?", "Cerrar Sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                LogIn Log = new LogIn();
+                Log.Show();
+                this.Hide();
+            }
+            else
+                return;
+        }
+
+        //Minimiza la ventana
+        private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        //Abre el form para gestionar los usuarios
+        private void btnGestUsuarios_Click(object sender, EventArgs e)
         {
             ConfigUsuarios formEstudiante = new ConfigUsuarios();
             formEstudiante.Show();
             this.Hide();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        //Abre el form para gestionar las asignaturas
+        private void btnGestAsignaturas_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            LogIn Log = new LogIn();
-            Log.Show();
+            GestAsignaturas gest = new GestAsignaturas();
+            gest.Show();
             this.Hide();
         }
+
+        
+
 
         private void button5_Click(object sender, EventArgs e)
         {

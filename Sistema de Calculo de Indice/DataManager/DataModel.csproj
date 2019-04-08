@@ -54,6 +54,7 @@
     <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Data\Asignaturas.json" />
     <None Include="Data\Carreras.json" />
     <None Include="Data\Estudiantes.json" />
     <None Include="Data\Profesores.json" />

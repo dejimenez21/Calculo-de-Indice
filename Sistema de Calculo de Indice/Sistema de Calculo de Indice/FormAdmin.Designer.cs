@@ -31,15 +31,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAtras = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnGestCarreras = new System.Windows.Forms.Button();
+            this.btnGestAsignaturas = new System.Windows.Forms.Button();
+            this.btnGestUsuarios = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@
             // btnAtras
             // 
             this.btnAtras.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtras.ForeColor = System.Drawing.Color.Transparent;
             this.btnAtras.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.Webp_net_resizeimage;
@@ -72,35 +74,37 @@
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
-            // button1
+            // btnSalir
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.new_resize_close;
-            this.button1.Location = new System.Drawing.Point(734, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 36);
-            this.button1.TabIndex = 12;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.new_resize_close;
+            this.btnSalir.Location = new System.Drawing.Point(734, 2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(43, 36);
+            this.btnSalir.TabIndex = 12;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // button2
+            // btnMinimize
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.mimizar;
-            this.button2.Location = new System.Drawing.Point(696, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 25);
-            this.button2.TabIndex = 13;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.mimizar;
+            this.btnMinimize.Location = new System.Drawing.Point(696, 13);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(28, 25);
+            this.btnMinimize.TabIndex = 13;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnGestCarreras);
+            this.groupBox1.Controls.Add(this.btnGestAsignaturas);
+            this.groupBox1.Controls.Add(this.btnGestUsuarios);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -112,38 +116,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones de Administrador";
             // 
-            // button5
+            // btnGestCarreras
             // 
-            this.button5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(71, 218);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(177, 31);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Gestión de Carreras";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnGestCarreras.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestCarreras.Location = new System.Drawing.Point(71, 218);
+            this.btnGestCarreras.Name = "btnGestCarreras";
+            this.btnGestCarreras.Size = new System.Drawing.Size(177, 31);
+            this.btnGestCarreras.TabIndex = 17;
+            this.btnGestCarreras.Text = "Gestión de Carreras";
+            this.btnGestCarreras.UseVisualStyleBackColor = true;
+            this.btnGestCarreras.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // btnGestAsignaturas
             // 
-            this.button4.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(71, 143);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(177, 31);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "Gestión de Asignaturas";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnGestAsignaturas.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestAsignaturas.Location = new System.Drawing.Point(71, 143);
+            this.btnGestAsignaturas.Name = "btnGestAsignaturas";
+            this.btnGestAsignaturas.Size = new System.Drawing.Size(177, 31);
+            this.btnGestAsignaturas.TabIndex = 17;
+            this.btnGestAsignaturas.Text = "Gestión de Asignaturas";
+            this.btnGestAsignaturas.UseVisualStyleBackColor = true;
+            this.btnGestAsignaturas.Click += new System.EventHandler(this.btnGestAsignaturas_Click);
             // 
-            // button3
+            // btnGestUsuarios
             // 
-            this.button3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(71, 75);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(177, 31);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Configuración de Usuarios";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnGestUsuarios.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestUsuarios.Location = new System.Drawing.Point(71, 75);
+            this.btnGestUsuarios.Name = "btnGestUsuarios";
+            this.btnGestUsuarios.Size = new System.Drawing.Size(177, 31);
+            this.btnGestUsuarios.TabIndex = 17;
+            this.btnGestUsuarios.Text = "Gestión de Usuarios";
+            this.btnGestUsuarios.UseVisualStyleBackColor = true;
+            this.btnGestUsuarios.Click += new System.EventHandler(this.btnGestUsuarios_Click);
             // 
             // label3
             // 
@@ -174,7 +178,17 @@
             this.label1.Size = new System.Drawing.Size(229, 14);
             this.label1.TabIndex = 15;
             this.label1.Text = "--- Agrega o elimina usuarios del sistema ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Roboto", 16F);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(285, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(207, 27);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Sistema Académico";
             // 
             // FormAdmin
             // 
@@ -182,9 +196,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnMinimize);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAtras);
@@ -194,6 +209,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -202,14 +218,15 @@
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnGestCarreras;
+        private System.Windows.Forms.Button btnGestAsignaturas;
+        private System.Windows.Forms.Button btnGestUsuarios;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -20,12 +20,14 @@ namespace DataModel
         string pathEstudiantes = ConfigurationManager.AppSettings["pathEstudiantes"];
         string pathProfesores = ConfigurationManager.AppSettings["pathProfesores"];
         string pathCarreras = ConfigurationManager.AppSettings["pathCarreras"];
+        string pathAsignaturas = ConfigurationManager.AppSettings["pathAsignaturas"];
         string pathIdEst = ConfigurationManager.AppSettings["pathIdEst"];
         string pathIdProf = ConfigurationManager.AppSettings["pathIdProf"];
 
         public List<Estudiante> Estudiantes = new List<Estudiante>();
         public List<Profesor> Profesores = new List<Profesor>();
         public List<Carrera> Carreras = new List<Carrera>();
+        public List<Asignatura> Asignaturas = new List<Asignatura>();
 
         public DataManager()
         {
@@ -61,6 +63,15 @@ namespace DataModel
             return Carreras;
         }
 
+        public List<Asignatura> RecuperarAsignaturas()
+        {
+            string archivoAsignaturas = File.ReadAllText(pathAsignaturas);
+
+            if (archivoAsignaturas.Any())
+                Asignaturas = JsonConvert.DeserializeObject<List<Asignatura>>(archivoAsignaturas);
+            return Asignaturas;
+        }
+
         public void RecuperarIds()
         {
             ID.Estudiantes = long.Parse(File.ReadAllText(pathIdEst));
@@ -68,25 +79,31 @@ namespace DataModel
         }
         #endregion
         #region Guardar
-        void GuardarEstudiantes()
+        public void GuardarEstudiantes()
         {
             string strEstudiantes = JsonConvert.SerializeObject(Estudiantes);
             File.WriteAllText(pathEstudiantes, strEstudiantes);
         }
 
-        void GuardarProfesores()
+        public void GuardarProfesores()
         {
             string strProfesores = JsonConvert.SerializeObject(Profesores);
             File.WriteAllText(pathProfesores, strProfesores);
         }
 
-        void GuardarCarreras()
+        public void GuardarCarreras()
         {
             string strCarreras = JsonConvert.SerializeObject(Carreras);
             File.WriteAllText(pathCarreras, strCarreras);
         }
 
-        void GuardarIds()
+        public void GuardarAsignaturas()
+        {
+            string strAsignaturas = JsonConvert.SerializeObject(Asignaturas);
+            File.WriteAllText(pathAsignaturas, strAsignaturas);
+        }
+
+        public void GuardarIds()
         {
             File.WriteAllText(pathIdEst, ID.Estudiantes.ToString());
             File.WriteAllText(pathIdProf, ID.Profesores.ToString());
@@ -136,6 +153,17 @@ namespace DataModel
             Carreras.Add(carrera);
             GuardarCarreras();
         }
+
+        public void AgregarAsignaturas(Asignatura asignatura)
+        {
+            if (!Asignaturas.Any())
+            {
+                RecuperarAsignaturas();
+            }
+
+            Asignaturas.Add(asignatura);
+            GuardarAsignaturas();
+        }
         #endregion
         #region Eliminar
         public void EliminarEstudiante(long id)
@@ -170,15 +198,25 @@ namespace DataModel
             Carreras.RemoveAll(x => x.Codigo == codigo);
             GuardarCarreras();
         }
+
+        public void EliminarAsignatura(string clave)
+        {
+            if (!Asignaturas.Any())
+            {
+                RecuperarAsignaturas();
+            }
+
+            Asignaturas.RemoveAll(x => x.Clave == clave);
+            GuardarAsignaturas();
+        }
+
         #endregion
         #region Verificar
         public bool VerificarCarrera(string codigo)
         {
             bool exist = false;
-            foreach(var carrera in Carreras.Where(x => x.Codigo == codigo))
-            {
+            if (Carreras.Any(x => x.Codigo == codigo))
                 exist = true;
-            }
 
             return exist;
         }
@@ -186,24 +224,55 @@ namespace DataModel
         public bool VerificarProfesor(long id)
         {
             bool exist = false;
-            foreach (var profesor in Profesores.Where(x => x.Id == id))
-            {
+            if (Profesores.Any(x => x.Id == id))
                 exist = true;
-            }
-
+            
             return exist;
         }
 
         public bool VerificarEstudiante(long id)
         {
             bool exist = false;
-            foreach (var estudiante in Estudiantes.Where(x => x.Id == id))
-            {
+            if (Estudiantes.Any(x => x.Id == id))
                 exist = true;
-            }
+            
+            return exist;
+        }
 
+        public bool VerificarAsignatura(string clave)
+        {
+            bool exist = false;
+            if(Asignaturas.Any(x=>x.Clave==clave))
+                exist = true;
+            
             return exist;
         }
         #endregion
+
+        public void ActualizarEstudiante(Estudiante estudiante)
+        {
+            foreach (var est in Estudiantes.Where(x=>x.Id==estudiante.Id))
+            {
+                est.Asignaturas = estudiante.Asignaturas;
+            }
+            GuardarEstudiantes();
+        }
+
+        public void AsignarProfesor(string clave, long prof)
+        {
+            RecuperarEstudiantes();
+            Asignaturas.Where(x => x.Clave == clave).ToList()[0].Profesor = Profesores.Where(x => x.Id == prof).ToList()[0];
+            GuardarAsignaturas();
+            foreach (var est in Estudiantes)
+            {
+                if (est.Asignaturas.Any(x => x.Clave == clave))
+                {
+                    est.Asignaturas.Where(x => x.Clave == clave).ToList()[0].Profesor = Profesores.Where(x => x.Id == prof).ToList()[0];
+                }
+                
+            }
+            GuardarEstudiantes();
+        }
+
     }
 }

@@ -9,8 +9,9 @@ namespace DataModel
     public class Estudiante : Usuario
     {
         Carrera Carrera;
-        public Carrera carrera { get => Carrera; set => Carrera = value; }
         List<Asignatura> asignaturas = new List<Asignatura>();
+        public Carrera carrera { get => Carrera; set => Carrera = value; }
+        public List<Asignatura> Asignaturas { get => asignaturas; set => asignaturas = value; }
 
         public Estudiante() { }
         public Estudiante(int user, string password)
@@ -28,6 +29,11 @@ namespace DataModel
         public void AgregarAsignatura(Asignatura asignatura)
         {
             asignaturas.Add(asignatura);
+        }
+
+        public bool IsSeleccionada(string clave)
+        {
+            return asignaturas.Any(x => x.Clave == clave);
         }
     }
 }

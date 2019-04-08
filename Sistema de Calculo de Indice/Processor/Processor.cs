@@ -9,7 +9,7 @@ namespace Control
 {
     public class Processor
     {
-       //
+       
         public Estudiante ValidarEstudiante(int user, string password, out bool login)
         {
             Estudiante estudiante = new Estudiante(user, password);
@@ -23,8 +23,23 @@ namespace Control
             }
             
             login = false;
-            return estudiante;
+            return null;    
         }
 
+        public Profesor ValidarProfesor(int user, string password, out bool login)
+        {
+            Profesor profesor = new Profesor(user, password);
+            DataManager datamanager = new DataManager();
+            datamanager.RecuperarProfesores();
+
+            foreach (var prof in datamanager.Profesores.Where(x => x.Id == user && x.Contraseña == password))
+            {
+                login = true;
+                return prof;
+            }
+
+            login = false;
+            return profesor;
+        }
     }
 }
