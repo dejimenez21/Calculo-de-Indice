@@ -174,7 +174,11 @@ namespace DataModel
                 RecuperarEstudiantes();
             }
 
-            Estudiantes.RemoveAll(x => x.Id == id);
+            foreach(var est in Estudiantes.Where(x => x.Id == id))
+            {
+                est.Estatus = false;
+            }
+            //Estudiantes.RemoveAll(x => x.Id == id);
             GuardarEstudiantes();
         }
 
@@ -350,7 +354,7 @@ namespace DataModel
             column.AutoIncrement = false;
             Data.Columns.Add(column);
 
-            foreach (var est in estudiantes)
+            foreach (var est in estudiantes.Where(x=>x.Asignaturas.Any(y=>y.calificada)))
             {
                 est.GetIndice();
                 DataRow row;
@@ -368,5 +372,44 @@ namespace DataModel
             return Data;
         }
 
+        public bool ComprobarDeshabilitarEstudiante(long id)
+        {
+            bool posible = true;
+            foreach (var est in Estudiantes.Where(x=>x.Id==id))
+            {
+                if (est.Asignaturas.Any(x => x.calificada == false))
+                {
+                    posible = false;
+                }
+            }
+            return posible;
+        }
+
+        public bool ComprobarEliminarCarrera(string codigo)
+        {
+            RecuperarEstudiantes();
+            bool posible= true;
+
+            foreach (var est in Estudiantes.Where(x=>x.Estatus && x.carrera.Codigo==codigo))
+            {
+                posible = false;
+            }
+
+            return posible;
+        }
+
+        public bool ComprobarEliminarAsignatura(string clave)
+        {
+            RecuperarEstudiantes();
+            bool posible = true;
+
+            foreach (var est in Estudiantes)
+            {
+                foreach(var asig in est.Asignaturas.Where(x=>x.Clave==clave && !x.calificada))
+                posible = false;
+            }
+
+            return posible;
+        }
     }
 }

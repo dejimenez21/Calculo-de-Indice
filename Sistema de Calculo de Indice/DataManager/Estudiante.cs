@@ -16,6 +16,7 @@ namespace DataModel
         public uint TotalCreditos;
         public uint TotalPuntosHonor;
         public string Honor;
+        public bool Estatus=true;
 
         public Estudiante() { }
         public Estudiante(int user, string password)

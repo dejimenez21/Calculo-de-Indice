@@ -30,6 +30,16 @@ namespace Sistema_de_Calculo_de_Indice
             tbId.Text = estudiante.Id.ToString();
             tbNombre.Text = estudiante.Nombre + " " + estudiante.Apellido;
             tbCarrera.Text = estudiante.carrera.Codigo + "-" + estudiante.carrera.Descripcion;
+            if (estudiante.Estatus)
+            {
+                tbEstatus.Text = "Activo";
+            }
+            else
+            {
+                tbEstatus.Text = "Inactivo";
+                btnSeleccionar.Enabled = false;
+            }
+
         }
 
         void FormRefresh()
@@ -113,7 +123,7 @@ namespace Sistema_de_Calculo_de_Indice
             }
 
             dtgvAsignaturas.DataSource = Data;
-
+            
         }
 
         void CompletarSeleccionadas()
@@ -287,6 +297,8 @@ namespace Sistema_de_Calculo_de_Indice
             }
 
             dtgvCalificaciones.DataSource = Data;
+            dtgvCalificaciones.Columns["Descripcion"].Width = 200;
+            dtgvCalificaciones.Columns["Creditos"].Width = 60;
         }
     }
 }

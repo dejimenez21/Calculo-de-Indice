@@ -75,7 +75,15 @@ namespace Sistema_de_Calculo_de_Indice
             column.ReadOnly = true;
             column.Unique = false;
             column.AutoIncrement = false;
-            
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Estatus";
+            column.Caption = "Estatus";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
             Data.Columns.Add(column);
 
             foreach (var est in datamanager.Estudiantes)
@@ -85,6 +93,14 @@ namespace Sistema_de_Calculo_de_Indice
                 row["ID"] = est.Id;
                 row["Estudiante"] = est.Nombre + " " + est.Apellido;
                 row["Carrera"] = est.carrera.Codigo + "-" + est.carrera.Descripcion;
+                if (est.Estatus)
+                {
+                    row["Estatus"] = "Activo";
+                }
+                else
+                {
+                    row["Estatus"] = "Inactivo";
+                }
                 Data.Rows.Add(row);
             }
 
@@ -154,7 +170,7 @@ namespace Sistema_de_Calculo_de_Indice
         //Elimina un estudiante
         private void btnElimEst_Click(object sender, EventArgs e)
         {
-            bool ok;
+           
             if (!long.TryParse(tbIdEst.Text, out long id))
             {
                 MessageBox.Show("El id ingresado no es valido");
@@ -168,20 +184,36 @@ namespace Sistema_de_Calculo_de_Indice
             }
             else
             {
-                if (MessageBox.Show("¿Seguro que desea eliminar estudiante?", "Eliminar usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (!datamanager.ComprobarDeshabilitarEstudiante(id))
                 {
-                    try
-                    {
-                        datamanager.EliminarEstudiante(id);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Se produjo un error al eliminar el estudiante");
-                        FormRefresh();
-                        return;
-                    }
-                    MessageBox.Show("Estudiante eliminado exitosamente");
+                    MessageBox.Show("El estudiante tiene asignaturas en curso actualmente. No es posible deshabilitarlo");
                 }
+                else
+                {
+                    if (datamanager.Estudiantes.Where(x => x.Id == id).ToList()[0].Estatus == false)
+                    {
+                        MessageBox.Show("El estudiante ya habia sido deshabilitado");
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("¿Seguro que desea deshabilitar estudiante?", "Deshabilitar estudiante", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            try
+                            {
+                                datamanager.EliminarEstudiante(id);
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Se produjo un error al deshabilitar el estudiante");
+                                FormRefresh();
+                                return;
+                            }
+                            MessageBox.Show("Estudiante deshabilitado exitosamente");
+                        }
+                    }
+                   
+                }
+                
             }
             FormRefresh();
         }

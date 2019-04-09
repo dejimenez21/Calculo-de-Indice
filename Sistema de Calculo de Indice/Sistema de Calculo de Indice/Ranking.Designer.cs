@@ -121,7 +121,7 @@
             this.groupBox3.Size = new System.Drawing.Size(800, 382);
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Estudiantes Registrados";
+            this.groupBox3.Text = "Estudiantes Calificados";
             // 
             // dtgvRanking
             // 

@@ -44,6 +44,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtgvAsignaturas = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbPuntos = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbCreditos = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.lbHonor = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbIndice = new System.Windows.Forms.Label();
@@ -60,10 +64,6 @@
             this.tbNombre = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lbPuntos = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbCreditos = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -245,10 +245,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.lbPuntos);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.lbCreditos);
-            this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.lbHonor);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.lbIndice);
@@ -261,6 +257,50 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Reporte de Calificaciones";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lbPuntos
+            // 
+            this.lbPuntos.AutoSize = true;
+            this.lbPuntos.Font = new System.Drawing.Font("Roboto", 10F);
+            this.lbPuntos.ForeColor = System.Drawing.Color.Black;
+            this.lbPuntos.Location = new System.Drawing.Point(302, 524);
+            this.lbPuntos.Name = "lbPuntos";
+            this.lbPuntos.Size = new System.Drawing.Size(24, 17);
+            this.lbPuntos.TabIndex = 45;
+            this.lbPuntos.Text = "45";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(124, 523);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(158, 18);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Total Puntos de Honor :";
+            // 
+            // lbCreditos
+            // 
+            this.lbCreditos.AutoSize = true;
+            this.lbCreditos.Font = new System.Drawing.Font("Roboto", 10F);
+            this.lbCreditos.ForeColor = System.Drawing.Color.Black;
+            this.lbCreditos.Location = new System.Drawing.Point(653, 523);
+            this.lbCreditos.Name = "lbCreditos";
+            this.lbCreditos.Size = new System.Drawing.Size(24, 17);
+            this.lbCreditos.TabIndex = 43;
+            this.lbCreditos.Text = "15";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(475, 523);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(106, 18);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "Total Creditos :";
             // 
             // lbHonor
             // 
@@ -316,7 +356,7 @@
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox5.Size = new System.Drawing.Size(544, 230);
+            this.groupBox5.Size = new System.Drawing.Size(789, 230);
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Calificaciones";
@@ -327,7 +367,7 @@
             this.dtgvCalificaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvCalificaciones.Location = new System.Drawing.Point(3, 17);
             this.dtgvCalificaciones.Name = "dtgvCalificaciones";
-            this.dtgvCalificaciones.Size = new System.Drawing.Size(538, 209);
+            this.dtgvCalificaciones.Size = new System.Drawing.Size(783, 209);
             this.dtgvCalificaciones.TabIndex = 16;
             // 
             // groupBox1
@@ -446,58 +486,18 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "Sistema Académico";
             // 
-            // lbPuntos
-            // 
-            this.lbPuntos.AutoSize = true;
-            this.lbPuntos.Font = new System.Drawing.Font("Roboto", 10F);
-            this.lbPuntos.ForeColor = System.Drawing.Color.Black;
-            this.lbPuntos.Location = new System.Drawing.Point(731, 152);
-            this.lbPuntos.Name = "lbPuntos";
-            this.lbPuntos.Size = new System.Drawing.Size(24, 17);
-            this.lbPuntos.TabIndex = 45;
-            this.lbPuntos.Text = "45";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(553, 151);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 18);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Total Puntos de Honor :";
-            // 
-            // lbCreditos
-            // 
-            this.lbCreditos.AutoSize = true;
-            this.lbCreditos.Font = new System.Drawing.Font("Roboto", 10F);
-            this.lbCreditos.ForeColor = System.Drawing.Color.Black;
-            this.lbCreditos.Location = new System.Drawing.Point(731, 188);
-            this.lbCreditos.Name = "lbCreditos";
-            this.lbCreditos.Size = new System.Drawing.Size(24, 17);
-            this.lbCreditos.TabIndex = 43;
-            this.lbCreditos.Text = "15";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(553, 188);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(106, 18);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "Total Creditos :";
-            // 
             // FormEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 495);
+            this.ClientSize = new System.Drawing.Size(800, 579);
+            this.Controls.Add(this.lbPuntos);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbCreditos);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnMinimize);

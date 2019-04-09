@@ -88,6 +88,7 @@ namespace Sistema_de_Calculo_de_Indice
                 if (login == true)
                 {
                     MessageBox.Show("Inicio de sesion exitoso");
+
                     FormEstudiante formEstudiante = new FormEstudiante(estudiante);
                     formEstudiante.Show();
                     this.Hide();

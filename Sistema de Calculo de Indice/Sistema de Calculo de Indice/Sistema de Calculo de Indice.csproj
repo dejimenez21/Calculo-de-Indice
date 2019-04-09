@@ -52,6 +52,12 @@
     <Compile Include="CalificarEstudiantes.Designer.cs">
       <DependentUpon>CalificarEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="CambiarPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiarPass.Designer.cs">
+      <DependentUpon>CambiarPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="CalificarEstudiantes.resx">
       <DependentUpon>CalificarEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambiarPass.resx">
+      <DependentUpon>CambiarPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>

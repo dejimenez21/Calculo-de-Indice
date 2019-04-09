@@ -85,23 +85,30 @@ namespace Sistema_de_Calculo_de_Indice
             }
             else
             {
-                if (MessageBox.Show("¿Seguro que desea eliminar esta carrera?", "Eliminar carrera", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (!dataManager.ComprobarEliminarCarrera(codigo))
                 {
-                    try
-                    {
-                        dataManager.EliminarCarrera(codigo);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Se produjo un error al eliminar la carrera");
-                        FormRefresh();
-                        return;
-                    }
-
-                    MessageBox.Show("Estudiante eliminado exitosamente");
-                    
-                    
+                    MessageBox.Show("Existen estudiantes activos cursando esta carrera. No es posible eliminarla.");
                 }
+                else
+                {
+                    if (MessageBox.Show("¿Seguro que desea eliminar esta carrera?", "Eliminar carrera", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            dataManager.EliminarCarrera(codigo);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Se produjo un error al eliminar la carrera");
+                            FormRefresh();
+                            return;
+                        }
+
+                        MessageBox.Show("Carrera eliminada exitosamente");
+
+                    }
+                }
+                
             }
 
             FormRefresh();

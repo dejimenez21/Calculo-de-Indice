@@ -170,11 +170,19 @@ namespace Sistema_de_Calculo_de_Indice
                 return;
             }
 
-            if(MessageBox.Show("¿Seguro que quiere eliminar esta asignatura?", "Eliminar asignatura", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (!datamanager.ComprobarEliminarAsignatura(clave))
             {
-                datamanager.EliminarAsignatura(clave);
-                MessageBox.Show("Asignatura eliminada exitosamente");
+                MessageBox.Show("Algunos estudiantes estan cursando esta asignatura. No es posible eliminarla");
             }
+            else
+            {
+                if (MessageBox.Show("¿Seguro que quiere eliminar esta asignatura?", "Eliminar asignatura", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    datamanager.EliminarAsignatura(clave);
+                    MessageBox.Show("Asignatura eliminada exitosamente");
+                }
+            }
+            
             FormRefresh();
         }
 
