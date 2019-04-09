@@ -15,6 +15,8 @@ namespace DataModel
         public bool calificada=false;
         uint calificacion;
         AlfaCalificacion alfacalificacion=AlfaCalificacion.N;
+        public uint PuntosHonor;
+        public uint ValorNota;
 
         public string Clave { get => clave; set => clave = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }       
@@ -31,17 +33,32 @@ namespace DataModel
                 if (value > 100)
                     throw new Exception("Calificacion no valida");
                 else if (value > 89)
-                    alfacalificacion = AlfaCalificacion.A;                   
+                {
+                    alfacalificacion = AlfaCalificacion.A;
+                    ValorNota = 4;
+                }               
                 else if (value > 79)
+                {
                     alfacalificacion = AlfaCalificacion.B;
+                    ValorNota = 3;
+                }
                 else if (value > 69)
+                {
                     alfacalificacion = AlfaCalificacion.C;
+                    ValorNota = 2;
+                }
                 else if (value > 59)
+                {
                     alfacalificacion = AlfaCalificacion.D;
+                    ValorNota = 1;
+                }
                 else
+                {
                     alfacalificacion = AlfaCalificacion.F;
-
+                    ValorNota = 0;
+                }
                 calificacion = value;
+                GetPuntosHonor();
             }
         }
         public uint Creditos { get => creditos; set => creditos = value; }
@@ -54,6 +71,10 @@ namespace DataModel
             this.creditos = creditos;
         }
 
+        void GetPuntosHonor()
+        {
+            PuntosHonor = creditos * ValorNota;
+        }
 
     }
 

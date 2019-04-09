@@ -102,12 +102,10 @@ namespace Sistema_de_Calculo_de_Indice
 
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        void InformacionGeneral()
         {
-            if (MessageBox.Show("¿Seguro que desea salir? Su sesion sera cerrada", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                Application.Exit();
-            else
-                return;
+            lbNombre.Text = asignatura.Profesor.Nombre+" "+asignatura.Profesor.Apellido;
+            lbAsignatura.Text = asignatura.Descripcion;
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -171,6 +169,27 @@ namespace Sistema_de_Calculo_de_Indice
         {
             EstudiantesRegistrados();
             IniciarDataTable();
+            InformacionGeneral();
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea salir? Su sesion sera cerrada", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
+            else
+                return;
+        }
+
+        private void btnMinimize_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnAtras_Click_1(object sender, EventArgs e)
+        {
+            FormProfesor formProfesor = new FormProfesor(asignatura.Profesor);
+            formProfesor.Show();
+            this.Hide();
         }
     }
 }

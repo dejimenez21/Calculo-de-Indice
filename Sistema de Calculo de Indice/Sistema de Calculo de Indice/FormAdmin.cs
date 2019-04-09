@@ -70,5 +70,12 @@ namespace Sistema_de_Calculo_de_Indice
             gestCarreras.Show();
             this.Hide();
         }
+
+        private void btnRanking_Click(object sender, EventArgs e)
+        {
+            Ranking ranking = new Ranking();
+            ranking.Show();
+            this.Hide();
+        }
     }
 }

@@ -43,10 +43,10 @@
             this.lbAsignatura = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -220,31 +220,6 @@
             this.label8.TabIndex = 39;
             this.label8.Text = "Asignaccion de Calificaciones";
             // 
-            // btnMinimize
-            // 
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.mimizar;
-            this.btnMinimize.Location = new System.Drawing.Point(696, 13);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(28, 25);
-            this.btnMinimize.TabIndex = 38;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.new_resize_close;
-            this.btnSalir.Location = new System.Drawing.Point(743, 2);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(43, 36);
-            this.btnSalir.TabIndex = 37;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Firebrick;
@@ -261,18 +236,43 @@
             this.panel1.Size = new System.Drawing.Size(800, 10);
             this.panel1.TabIndex = 36;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.new_resize_close;
+            this.btnSalir.Location = new System.Drawing.Point(748, 2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(40, 36);
+            this.btnSalir.TabIndex = 42;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.mimizar;
+            this.btnMinimize.Location = new System.Drawing.Point(710, 13);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(28, 25);
+            this.btnMinimize.TabIndex = 41;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click_1);
+            // 
             // btnAtras
             // 
             this.btnAtras.BackColor = System.Drawing.Color.Transparent;
             this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtras.ForeColor = System.Drawing.Color.Transparent;
             this.btnAtras.Image = global::Sistema_de_Calculo_de_Indice.Properties.Resources.Webp_net_resizeimage;
-            this.btnAtras.Location = new System.Drawing.Point(24, 8);
+            this.btnAtras.Location = new System.Drawing.Point(12, 6);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(41, 29);
-            this.btnAtras.TabIndex = 41;
+            this.btnAtras.TabIndex = 43;
             this.btnAtras.UseVisualStyleBackColor = false;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
             // 
             // CalificarEstudiantes
             // 
@@ -281,10 +281,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 396);
             this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.btnMinimize);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -322,10 +322,10 @@
         private System.Windows.Forms.Label lbAsignatura;
         private System.Windows.Forms.Label Nombre;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnAtras;
     }
 }

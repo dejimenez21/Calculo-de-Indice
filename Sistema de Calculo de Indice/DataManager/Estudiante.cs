@@ -12,6 +12,10 @@ namespace DataModel
         List<Asignatura> asignaturas = new List<Asignatura>();
         public Carrera carrera { get => Carrera; set => Carrera = value; }
         public List<Asignatura> Asignaturas { get => asignaturas; set => asignaturas = value; }
+        public double Indice;
+        public uint TotalCreditos;
+        public uint TotalPuntosHonor;
+        public string Honor;
 
         public Estudiante() { }
         public Estudiante(int user, string password)
@@ -34,6 +38,41 @@ namespace DataModel
         public bool IsSeleccionada(string clave)
         {
             return asignaturas.Any(x => x.Clave == clave);
+        }
+
+        public double GetIndice()
+        {
+            TotalCreditos = 0;
+            TotalPuntosHonor = 0;
+
+            foreach(Asignatura asignatura in asignaturas.Where(x=>x.calificada))
+            {
+                TotalCreditos += asignatura.Creditos;
+                TotalPuntosHonor += asignatura.PuntosHonor;
+            }
+            if (TotalCreditos != 0)
+            {
+                Indice = TotalPuntosHonor / (double)TotalCreditos;
+            }
+            Indice = Math.Round(Indice, 2);
+
+            if (Indice > 3.79)
+            {
+                Honor = "Summa Cum Laude";
+            }
+            else if (Indice > 3.59)
+            {
+                Honor = "Magna Cum Laude";
+            }
+            else if (Indice > 3.39)
+            {
+                Honor = "Cum Laude";
+            }
+            else
+            {
+                Honor = "Sin Honor";
+            }
+            return Indice;
         }
     }
 }

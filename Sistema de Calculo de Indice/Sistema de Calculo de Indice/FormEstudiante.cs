@@ -193,6 +193,100 @@ namespace Sistema_de_Calculo_de_Indice
             FormRefresh();
         }
 
-        
+        private void FormEstudiante_Load(object sender, EventArgs e)
+        {
+            lbIndice.Text = estudiante.GetIndice().ToString();
+            lbHonor.Text = estudiante.Honor;
+            lbPuntos.Text = estudiante.TotalPuntosHonor.ToString();
+            lbCreditos.Text = estudiante.TotalCreditos.ToString();
+            DataTableCalificaciones();
+        }
+
+        void DataTableCalificaciones()
+        {
+            DataTable Data = new DataTable();
+            DataColumn column;
+            datamanager.RecuperarAsignaturas();
+
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Clave";
+            column.Caption = "Clave";
+            column.ReadOnly = true;
+            column.Unique = true;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Descripcion";
+            column.Caption = "Descripcion";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(uint);
+            column.ColumnName = "Creditos";
+            column.Caption = "Creditos";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Profesor";
+            column.Caption = "Profesor";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(AlfaCalificacion);
+            column.ColumnName = "Calificacion";
+            column.Caption = "Calificacion";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(uint);
+            column.ColumnName = "Valor";
+            column.Caption = "Valor";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(uint);
+            column.ColumnName = "Puntos de Honor";
+            column.Caption = "Puntos de Honor";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            foreach (var asig in estudiante.Asignaturas.Where(x=>x.calificada))
+            {
+                DataRow row;
+                row = Data.NewRow();
+                row["Clave"] = asig.Clave;
+                row["Descripcion"] = asig.Descripcion;
+                row["Creditos"] = asig.Creditos;
+                row["Profesor"] = asig.Profesor.Nombre + " " + asig.Profesor.Apellido;
+                row["Calificacion"] = asig.Alfacalificacion;
+                row["Valor"] = asig.ValorNota;
+                row["Puntos de Honor"] = asig.PuntosHonor;
+                Data.Rows.Add(row);
+            }
+
+            dtgvCalificaciones.DataSource = Data;
+        }
     }
 }

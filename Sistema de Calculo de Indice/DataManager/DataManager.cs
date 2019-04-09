@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using Newtonsoft.Json;
 using System.IO;
+using System.Data;
 
 namespace DataModel
 {
@@ -282,6 +283,89 @@ namespace DataModel
                 
             }
             GuardarEstudiantes();
+        }
+
+        public DataTable Ranking()
+        {
+            int posicion = 1;
+            RecuperarEstudiantes();
+            List<Estudiante> estudiantes = Estudiantes;
+
+            estudiantes = estudiantes.OrderBy(x => x.Indice).ToList();
+
+            DataTable Data = new DataTable();
+            DataColumn column;
+
+            column = new DataColumn();
+            column.DataType = typeof(int);
+            column.ColumnName = "Posicion";
+            column.Caption = "Posicion";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(long);
+            column.ColumnName = "ID";
+            column.Caption = "ID";
+            column.ReadOnly = true;
+            column.Unique = true;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Estudiante";
+            column.Caption = "Estudiante";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Carrera";
+            column.Caption = "Carrera";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(double);
+            column.ColumnName = "Indice";
+            column.Caption = "Indice";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Honor";
+            column.Caption = "Honor";
+            column.ReadOnly = true;
+            column.Unique = false;
+            column.AutoIncrement = false;
+            Data.Columns.Add(column);
+
+            foreach (var est in estudiantes)
+            {
+                est.GetIndice();
+                DataRow row;
+                row = Data.NewRow();
+                row["Posicion"] = posicion;
+                row["ID"] = est.Id;
+                row["Estudiante"] = est.Nombre + " " + est.Apellido;
+                row["Carrera"] = est.carrera.Codigo + "-" + est.carrera.Descripcion;
+                row["Indice"] = est.Indice;
+                row["Honor"] = est.Honor;
+                Data.Rows.Add(row);
+                posicion++;
+            }
+
+            return Data;
         }
 
     }
